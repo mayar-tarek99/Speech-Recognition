@@ -84,7 +84,7 @@ class audio():
         audio1 = audio(
             './DataBase/vocals/بسم الله الرحمن الرحيم .. صوت (128  kbps) (shabakngy.com).mp3_vocals.mp3')
         audio2 = audio(
-            './DataBase/vocals/بسم الله الرحمن الرحيم صوت جميل (192 kbps).mp3_vocals.mp3')
+            './DataBase/vocals/بسم الله الرحمن الرحيم .. صوت (128  kbps) (shabakngy.com).mp3_vocals.mp3')
         oldFeats = [0, audio1.feature1(), audio1.feature2(), audio1.feature3()]
         newFeats = [0, audio2.feature1(), audio2.feature2(), audio2.feature3()]
         for j in range(1, 4):
@@ -101,16 +101,26 @@ audio('./welcome.mp3').findsimilarto()
 
 
 # aya = q.quran.get_verse(sura_number=1, verse_number=2)
-# sora = q.quran.get_sura(108, with_tashkeel=False)
-# #sora1 = q.quran.get_sura(108, with_tashkeel=False)
-# sora1 = ['إن أعطيناك الكوثر', 'فصل لربك وانحر', 'إن شانئك هو الأبتر']
-# print(sora, '-------', sora1)
+# sora = q.quran.get_sura(108, with_tashkeel=True)
+# # print(sora)
+# # sora1 = q.quran.get_sura(108, with_tashkeel=False)
+# # sora1 = ['إن أعطيناك الكوثر', 'فصل لربك وانحر', 'إن شانئك هو الأبتر']
+# # print(sora, '-------', sora1)
 # rev_sora = []
+# name = 'الكوثر'
 # for i in range(len(sora)):
 #     reshaped_text = arabic_reshaper.reshape(sora[i])
 #     rev_sora.append(reshaped_text[::-1])
 # reshaped_text = arabic_reshaper.reshape(aya)
 # rev_text = reshaped_text[::-1]  # slice backwards
 # rev_sora.reverse()
-# print(rev_sora)
-# print(SequenceMatcher(None, sora, sora1).ratio())
+
+# ayat = rev_sora[i].split()
+# if 'الكوثر' in ayat:
+#     print('true')
+# for n in range(len(rev_sora)):
+#     ayas = rev_sora[n].split()
+#     if name in ayas:
+#         print('found')
+
+# print(SequenceMatcher(None, sora).ratio())
