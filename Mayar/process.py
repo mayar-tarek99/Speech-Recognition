@@ -14,6 +14,7 @@ class Processing(soundFile.SoundFile):
         self.rolloff_feature = None
         self.mfcc_feature = None
         self.chroma_stft_feature = None
+        self.lpcc_feature = None
         self.features_hashes=[]
 
     def extractSpectrogram(self):
@@ -26,10 +27,13 @@ class Processing(soundFile.SoundFile):
     def extractFeatures(self):
         print ("extractFeatures")
         try:
-            self.centroid_feature= librosa.feature.spectral_centroid(self.data, self.samplingFrequency)
+            features=[self.centroid_feature,self.rolloff_feature, self.mfcc_feature,self.chroma_stft_feature,self.lpcc_feature]
+            self.centroid_feature= librosa.feature.spectral_centroid(self.data,self.samplingFrequency)
             self.rolloff_feature= librosa.feature.spectral_rolloff(self.data, self.samplingFrequency)
             self.mfcc_feature = librosa.feature.mfcc(self.data, self.samplingFrequency)
-            self.chroma_stft_feature = librosa.feature.chroma_stft(self.data, self.samplingFrequency) 
+            self.chroma_stft_feature = librosa.feature.chroma_stft(self.data, self.samplingFrequency)
+            self.lpcc_feature = librosa.feature.lpc(self.data, self.samplingFrequency) 
+            return features 
         except:
             print("enter data")
     
@@ -37,7 +41,7 @@ class Processing(soundFile.SoundFile):
     def Hash(self):
         print ("Hash")
         try:
-            features=[self.centroid_feature,self.rolloff_feature, self.mfcc_feature,self.chroma_stft_feature]
+            features=[self.centroid_feature,self.rolloff_feature, self.mfcc_feature,self.chroma_stft_feature,self.lpcc_feature]
             for feature in features:
                 self.features_hashes.append(list(str((imagehash.phash(Image.fromarray(feature))))))
             print(self.features_hashes)
@@ -45,12 +49,3 @@ class Processing(soundFile.SoundFile):
         except:
             print("get features first!")
 
-
-    
-       
-
-# samplerate, data = wavfile.read('./soundFiles/output.wav')
-# p = Processing(data,samplerate)
-# p.extractSpectrogram()
-# p.extractFeatures()
-# p.Hash()
