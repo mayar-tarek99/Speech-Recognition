@@ -4,6 +4,8 @@ import imagehash
 from PIL import Image
 import soundFile
 from scipy.io import wavfile
+from dtw import dtw
+
 
 
 class Processing(soundFile.SoundFile):
@@ -47,7 +49,6 @@ class Processing(soundFile.SoundFile):
 
 
     
-       
 
 # samplerate, data = wavfile.read('./soundFiles/output.wav')
 # p = Processing(data,samplerate)

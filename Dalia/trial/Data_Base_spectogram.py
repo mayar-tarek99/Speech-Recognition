@@ -10,7 +10,7 @@ from keras import layers
 from keras import layers
 import keras
 import csv
-
+import imagehash
 
 class Extract_specto_from_DB():
     def __init__(self,DataBase):
@@ -34,12 +34,12 @@ class Extract_specto_from_DB():
             mfcc = librosa.feature.mfcc(y=y, sr=sr)
             rolloff = librosa.feature.spectral_rolloff(y=y, sr=sr)
             spec_cent = librosa.feature.spectral_centroid(y=y, sr=sr)
-            to_append = f'{self.DataBase.index(base)} {np.mean(spec_cent)} {np.mean(rolloff)} {np.mean(chroma_stft)} {np.mean(mfcc)}'    
+            to_append = f'{self.DataBase.index(base)} {str(imagehash.phash(Image.fromarray(spec_cent)))} {str(imagehash.phash(Image.fromarray(rolloff)))} {str(imagehash.phash(Image.fromarray(chroma_stft)))} {str(imagehash.phash(Image.fromarray(mfcc)))}'    
             file = open('dataset.csv', 'a', newline='')
             with file:
                writer = csv.writer(file)
                writer.writerow(to_append.split())
-
+            #    return mfcc
 
 
 

@@ -6,6 +6,7 @@ class plotAudio(record.Recording):
     def __init__(self,data,samplingFrequency,duration) :
         super().__init__(data,samplingFrequency,duration)
     def visualize(self,path:str):
+	    print("plotting Audio")
 	
 	# reading the audio file
 	    raw = wave.open(path)
