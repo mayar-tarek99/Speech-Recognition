@@ -2,10 +2,6 @@ import parselmouth
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
-
-
-
 sns.set() # Use seaborn's default style to make attractive graphs
 plt.rcParams['figure.dpi'] = 100 # Show nicely large images in this notebook
 snd = parselmouth.Sound("108_short.wav")

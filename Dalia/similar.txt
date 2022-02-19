@@ -1,0 +1,52 @@
+mostafa2 = raouf 
+radwafilterd = khloud
+zeyad = hassan
+myhassan = hassan
+myahmed = maryem
+========================
+myahmed
+mostafa2
+ahmed1
+amira1=dalia
+othtafa
+==================++++++++++++++++++
+Amira1 => Dalia
+myhisham =>mostafa
+mymohamed =>khloud
+Salah2 => Hassan
+Shady2=> Hassan
+Tarek1 => Maryem
+Tarek2 => Hassan
+Yasmin2 => hassan
+
+
+
+
+
+
+
+
+
+mongo "mongodb+srv://<username>:<password>@<cluster>.mongodb.net/admin"
+
+
+show dbs
+
+use sample_training
+
+show collections
+
+db.zips.find({"state": "NY"})
+
+
+
+
+
+
+
+
+db.zips.find({"state": "NY"}).count()
+
+db.zips.find({"state": "NY", "city": "ALBANY"})
+
+db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()

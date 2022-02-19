@@ -23,7 +23,7 @@ import record
 
 
 
-harvard = sr.AudioFile('Mostafa.wav')
+harvard = sr.AudioFile('Mostafa2.wav')
 with harvard as source:
  r.adjust_for_ambient_noise(source,duration=0.03) #for noise
  audio = r.record(source)
@@ -36,14 +36,14 @@ with harvard as source:
 #  else:
 #      print("NO")
 
-Quran2 = sr.AudioFile('Mothtafa.wav')
-with Quran2 as source2:
- r.adjust_for_ambient_noise(source2,duration=0.15) #for noise
- audio2 = r.record(source2)
- x2= r.recognize_google(audio2,language="ar-EG")
- reshaped_text2 = arabic_reshaper.reshape(x2)    # correct its shape
- bidi_text2 = get_display(reshaped_text2)   
- print(bidi_text2)
+# Quran2 = sr.AudioFile('Mothtafa.wav')
+# with Quran2 as source2:
+#  r.adjust_for_ambient_noise(source2,duration=0.15) #for noise
+#  audio2 = r.record(source2)
+#  x2= r.recognize_google(audio2,language="ar-EG")
+#  reshaped_text2 = arabic_reshaper.reshape(x2)    # correct its shape
+#  bidi_text2 = get_display(reshaped_text2)   
+#  print(bidi_text2)
 #  if  x[0:5]  == x2[0:5]:
 #      print("yees")
 #  else:

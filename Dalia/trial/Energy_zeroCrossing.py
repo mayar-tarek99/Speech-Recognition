@@ -35,6 +35,11 @@ print("zcr",zcr_audio2)
 frames = range(len(zcr_audio2))
 t = librosa.frames_to_time(frames, hop_length=HOP_LENGTH)
 print("time",t)
+plt.plot(t, zcr_audio2, color="b")
+plt.ylim(0, 1)
+plt.show()
+
+
 # def figPlot():
 
 #   plt.figure(figsize=(15, 17))
