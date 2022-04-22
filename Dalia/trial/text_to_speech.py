@@ -7,10 +7,10 @@ from gtts import gTTS
 import os
   
 # The text that you want to convert to audio
-mytext = 'mayam'
+mytext = 'shorba'
   
 # Language in which you want to convert
-language = 'en'
+language = 'ar'
   
 # Passing the text and language to the engine, 
 # here we have marked slow=False. Which tells 
@@ -20,7 +20,7 @@ myobj = gTTS(text=mytext, lang=language, slow=False)
   
 # Saving the converted audio in a mp3 file named
 # welcome 
-myobj.save("mayam.mp3")
+myobj.save("شوربة.mp3")
   
 # Playing the converted file
-os.system("start  mayam.mp3")
+# os.system("start  mayam.mp3")
